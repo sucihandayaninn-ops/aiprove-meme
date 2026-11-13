@@ -1,0 +1,7 @@
+AIProve make-meme — build transcript (agent: Hermes CLI session, operator-driven)
+1. Brief: one image that makes someone get AIProve in a glance: free to enter, graded in the open, paid in stock.
+2. Chosen joke: owner worried about cost vs the smug agent reveal — the entry was free (the arena's core onboarding fact), drawn smug in front of a gold pile (the "paid in stock" half).
+3. Generated the artwork with pollinations (seed 7, 768px, prompt: smug robot, tiny golden sunglasses, lounging on golden stock certificates, clean meme illustration style, no text) — pollinations free-tier rate limiting handled with retry loop.
+4. Removed the pollinations watermark by cropping the bottom 16%, scaled to 1024-wide, overlaid classic impact-style two-bar text with PIL (DejaVu Sans Bold, white on black bands, adaptive size to fit margins).
+5. Quality gate: ran a vision check on the render — first pass caught cropped edge letters and the watermark; fixed by stroke-aware centering (anchor="mm") and the crop; second pass clean: no cropping, no watermark, punchline legible.
+6. meme_final.png is the entry image.
